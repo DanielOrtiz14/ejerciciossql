@@ -1,0 +1,32 @@
+1.-)
+Insert Into Productos (producto, primary key int(10), Nombre nvarchar(100), precio money(5)) values (150, "Coca-Cola", $30);
+Insert Into Productos (producto, primary key int(10), Nombre nvarchar(100), precio money(5)) values (14, "Chettos", $10);
+Insert Into Productos (producto, primary key int(10), Nombre nvarchar(100), precio money(5)) values (1, "Torres 10", $1200);
+
+Insert Into Maquinas Registradoras (Maquina, Primary Key int(10), Piso int(2)) values (10,20);
+Insert Into Maquinas Registradoras (Maquina, Primary Key int(10), Piso int(2)) values (8,15);
+Insert Into Maquinas Registradoras (Maquina, Primary Key int(10), Piso int(2)) values (1,1);
+
+Insert Into Cajeros (Cajero, primary key int(10),NomApels nvarchar(255))values (15, "Pablo");
+Insert Into Cajeros (Cajero, primary key int(10),NomApels nvarchar(255))values (5, "Pedro");
+Insert Into Cajeros (Cajero, primary key int(10),NomApels nvarchar(255))values (1, "Maria");
+
+Insert Into Venta (cajero int(10), Maquina int(10), Productp int(10)) values (1,1,1);
+Insert Into Venta (cajero int(10), Maquina int(10), Producto int(10)) values (5,8,14);
+Insert Into Venta (cajero int(10), Maquina int(10), Producto int(10)) values (15,10,150);
+
+2.-)
+Select Producto From Ventas Order by ASC;
+
+3.-)
+Select NomApels, Nombre, Precio, Piso From Ventas, cajero, Productos, Maquina Registradora;
+
+4.-)
+Select Piso AND SUM Productos From Ventas;
+
+5.-)
+Select cajero, NomApels AND SUM Productos FROM Ventas;
+
+6.-)
+Select cajero, NomApels From Ventas Where SUM Productos < 5000 IN pisos
+  
